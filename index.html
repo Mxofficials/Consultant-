@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexLead | Strategic Business Consulting</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --accent: #f59e0b;
+            --text-color: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+
+        header {
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 9rem 2rem 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--secondary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .calculator-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .result-display {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #eff6ff;
+            border-left: 4px solid var(--secondary);
+            font-weight: bold;
+            color: var(--primary);
+            display: none;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">ApexLead</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#estimator">ROI Estimator</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Scale Your Business with Expert Strategy</h1>
+            <p>We help ambitious organizations optimize operations, accelerate growth, and drive lasting market leadership.</p>
+            <button class="btn" onclick="scrollToSection('estimator')">Calculate Your Growth</button>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Core Consulting Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Strategic Growth</h3>
+                <p>Develop robust market entry strategies, expand product lifecycles, and unlock new revenue streams tailored to your industry.</p>
+            </div>
+            <div class="service-card">
+                <h3>Operational Efficiency</h3>
+                <p>Streamline workflows, reduce overhead costs, and implement agile frameworks to optimize overall business performance.</p>
+            </div>
+            <div class="service-card">
+                <h3>Digital Transformation</h3>
+                <p>Integrate modern automation tools, secure cloud infrastructure, and data analytics pipelines to future-proof your company.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="estimator" class="section" style="background: #f1f5f9;">
+        <h2 class="section-title">Interactive ROI Estimator</h2>
+        <div class="calculator-box">
+            <div class="form-group">
+                <label for="companySize">Select Company Size (Employees)</label>
+                <select id="companySize">
+                    <option value="10">1 - 50 Employees</option>
+                    <option value="25">51 - 200 Employees</option>
+                    <option value="50">200+ Employees</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="currentRevenue">Current Annual Revenue (\$ USD)</label>
+                <input type="number" id="currentRevenue" placeholder="e.g. 500000" min="10000">
+            </div>
+            <button class="btn" style="width: 100%;" onclick="calculateROI()">Estimate Potential Growth</button>
+            <div id="roiResult" class="result-display"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="section" style="text-align: center;">
+        <h2 class="section-title">Ready to Transform Your Business?</h2>
+        <p style="margin-bottom: 2rem;">Book a complimentary 30-minute discovery consultation session today.</p>
+        <button class="btn" onclick="bookConsultation()">Schedule Call Now</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ApexLead Consulting. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function calculateROI() {
+            const sizeMultiplier = parseFloat(document.getElementById('companySize').value);
+            const revenue = parseFloat(document.getElementById('currentRevenue').value);
+            const resultBox = document.getElementById('roiResult');
+
+            if (!revenue || revenue <= 0) {
+                resultBox.style.display = 'block';
+                resultBox.style.color = '#dc2626';
+                resultBox.style.borderColor = '#dc2626';
+                resultBox.style.background = '#fef2f2';
+                resultBox.textContent = 'Please enter a valid annual revenue amount.';
+                return;
+            }
+
+            // Simple estimation logic based on parameters
+            const estimatedGrowthPercentage = sizeMultiplier * 0.4; 
+            const projectedGain = revenue * (estimatedGrowthPercentage / 100);
+
+            resultBox.style.display = 'block';
+            resultBox.style.color = 'var(--primary)';
+            resultBox.style.borderColor = 'var(--secondary)';
+            resultBox.style.background = '#eff6ff';
+            resultBox.textContent = `Estimated Annual Value Creation: +$${projectedGain.toLocaleString(undefined, {maximumFractionDigits: 0})} (${estimatedGrowthPercentage.toFixed(1)}% efficiency/revenue uplift)`;
+        }
+
+        function bookConsultation() {
+            alert('Thank you for your interest! A consultant will redirect you or contact you via email shortly.');
+        }
+    </script>
+</body>
+</html>
